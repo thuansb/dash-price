@@ -1,27 +1,13 @@
+var fullName = 'OmiseGO';
+var shortName = 'OMG';
 var dashInt;
 var ecbInt;
 
-function displayStuff() {
-    var dash = "" +
-        "     ;;;;;;;;;;;;;;;    ;;;;;;;;;;;;;;`   .;;;;;;;;;;;;;;;  ;;;;        ;;;;\n" +
-        "    .;;;;;;;;;;;;;;;.  ;;;;;;;;;;;;;;;;  .;;;;;;;;;;;;;;;` .;;;;       `;;;;\n" +
-        "    ;;;;;;;;;;;;;;;;. `;;;;;;;;;;;;;;;;  ;;;;;;;;;;;;;;;;  ;;;;        ;;;;`\n" +
-        "                 ;;;;  ;;;;`       :;;;. .;;;;              ;;;;        ;;;;\n" +
-        "   ```````       ;;;;  ;;;;        ;;;;  ;;;;,.````....    `;;;;.``````,;;;;\n" +
-        "  ;;;;;;;.      :;;;: `;;;;  `.````;;;;  ;;;;;;;;;;;;;;;`  ;;;;;;;;;;;;;;;;.\n" +
-        "   ;;;;;;;       ;;;;  ;;;;.  ;;;;;;;;;:  .;;;;;;;;;;;;;;;  ;;;;;;;;;;;;;;;;\n" +
-        "   ```````       ;;;;  ;;;;  `;;;;;;;;;     `````````:;;;. `;;;;````````;;;;\n" +
-        "                .;;;; `;;;;  `````.;;;;              ;;;;  ;;;;`       .;;;:\n" +
-        "     ;;;;;;;;;;;;;;;;` :;;;.       `;;;;  ;;;;;;;;;;;;;;;;  ;;;;        ;;;;\n" +
-        "     ;;;;;;;;;;;;;;;;  ;;;;        ;;;;` :;;;;;;;;;;;;;;;   ;;;;        ;;;;\n" +
-        "    .;;;;;;;;;;;;;;:   ;;;;        ;;;;  ;;;;;;;;;;;;;;;`  :;;;.       `;;;:\n"
-    console.log(dash);
-}
 function setTitle() {
     var curr = options.currency.get();
     var price = DashPrice.getPrice(curr);
     chrome.browserAction.setTitle({
-        'title': '1 Dash = ' + price + " " + curr
+        'title': '1 ' + fullName + ' = ' + price + " " + curr
     });
 };
 function setBadgeColor(color) {
@@ -199,7 +185,7 @@ var DashPrice = {
     fetch: {
         dashPrice: function () {
             return AJAX
-                .get("https://api.coinmarketcap.com/v1/ticker/dash/")
+                .get("https://api.coinmarketcap.com/v1/ticker/omisego/")
                 .then(function (data) {
                     if (data) {
                         data = JSON.parse(data);

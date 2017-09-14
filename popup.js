@@ -38,7 +38,6 @@ function toggleOptions(){
 }
 function loadPopup() {
     window.onload = function(){
-        displayStuff()
         var editorExtensionId = "ogmiolejjgikhpbhnbnkdlhopfknldcb";
     
         chrome.runtime.sendMessage({type: "priceHistory"},
@@ -50,7 +49,7 @@ function loadPopup() {
     
         var dashIcon = document.getElementById("logo-icon");
         dashIcon.onclick=function(e){
-            var redirectWindow = window.open('https://www.dash.org', '_blank');
+            var redirectWindow = window.open('https://omg.omise.co/', '_blank');
             redirectWindow.location;
         };
         var refreshIcon = document.getElementById("refresh-icon");
